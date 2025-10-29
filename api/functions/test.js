@@ -1,4 +1,4 @@
-import { getDb } from "../../utils/mongoClient.js";
+import { getDb } from "../utils/mongoClient.js";
 
 export async function getAllTasks() {
   try {
