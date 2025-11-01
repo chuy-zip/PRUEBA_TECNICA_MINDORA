@@ -1,0 +1,249 @@
+{
+	"info": {
+		"_postman_id": "bc6adaf1-1dbc-4a24-a37d-41c51aa4ed80",
+		"name": "Mindora Test Deploy",
+		"description": "Estos endpoints son una colección simple para un CRUD de un TODO-LIST.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30176344"
+	},
+	"item": [
+		{
+			"name": "Get All Tasks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://prueba-tecnica-mindora.vercel.app/api/tasks/",
+					"protocol": "https",
+					"host": [
+						"prueba-tecnica-mindora",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"api",
+						"tasks",
+						""
+					]
+				},
+				"description": "Obtiene la lista completa de tareas"
+			},
+			"response": []
+		},
+		{
+			"name": "Get tasks completas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://prueba-tecnica-mindora.vercel.app/api/tasks/estado/completadas",
+					"protocol": "https",
+					"host": [
+						"prueba-tecnica-mindora",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"api",
+						"tasks",
+						"estado",
+						"completadas"
+					]
+				},
+				"description": "Filtra tareas por estado de completación, cuando las tareas estan completadas. El estado/:status, es un string que en este caso es la palabra 'completadas'."
+			},
+			"response": []
+		},
+		{
+			"name": "Get tasks incompletas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://prueba-tecnica-mindora.vercel.app/api/tasks/estado/incompletas",
+					"protocol": "https",
+					"host": [
+						"prueba-tecnica-mindora",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"api",
+						"tasks",
+						"estado",
+						"incompletas"
+					]
+				},
+				"description": "Filtra tareas por estado de completación, cuando las tareas estan incompletas. El estado/:status, es un string que en este caso es la palabra 'incompletas'."
+			},
+			"response": []
+		},
+		{
+			"name": "Get Tasks Por id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://prueba-tecnica-mindora.vercel.app/api/tasks/:id  ",
+					"protocol": "https",
+					"host": [
+						"prueba-tecnica-mindora",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"api",
+						"tasks",
+						":id  "
+					],
+					"variable": [
+						{
+							"key": "id  ",
+							"value": "690664028d772eb6dac814af"
+						}
+					]
+				},
+				"description": "Obtiene una tarea específica por su ID"
+			},
+			"response": []
+		},
+		{
+			"name": "Create task",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"titulo\": \"Entregar una tarea nueva 5\",\r\n  \"descripcion\": \"Una tarea\",\r\n  \"prioridad\": 2,\r\n  \"fechaVencimiento\": \"2024-12-5\",\r\n  \"etiquetas\": [\"urgente\", \"universidad\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://prueba-tecnica-mindora.vercel.app/api/tasks",
+					"protocol": "https",
+					"host": [
+						"prueba-tecnica-mindora",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"api",
+						"tasks"
+					]
+				},
+				"description": "Endpoint para la creación de un task nuevo."
+			},
+			"response": []
+		},
+		{
+			"name": "Update task status",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://prueba-tecnica-mindora.vercel.app/api/tasks/:id/completar",
+					"protocol": "https",
+					"host": [
+						"prueba-tecnica-mindora",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"api",
+						"tasks",
+						":id",
+						"completar"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "690664028d772eb6dac814af"
+						}
+					]
+				},
+				"description": "Endpoint que sirve específicamente para poder marcar un task como completado"
+			},
+			"response": []
+		},
+		{
+			"name": "Update task data",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"titulo\": \"Nuevo título de la tarea de prueba\",\r\n  \"descripcion\": \"descripcion acutalizada\",\r\n  \"prioridad\": 8,\r\n  \"etiquetas\": [\"urgente\", \"trabajo\", \"importante\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://prueba-tecnica-mindora.vercel.app/api/tasks/:id ",
+					"protocol": "https",
+					"host": [
+						"prueba-tecnica-mindora",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"api",
+						"tasks",
+						":id "
+					],
+					"variable": [
+						{
+							"key": "id ",
+							"value": "690664028d772eb6dac814af"
+						}
+					]
+				},
+				"description": "Un Endpoint para poder modificar distintos atributos de un task, en base a su id."
+			},
+			"response": []
+		},
+		{
+			"name": "Delete task por id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://prueba-tecnica-mindora.vercel.app/api/tasks/:id",
+					"protocol": "https",
+					"host": [
+						"prueba-tecnica-mindora",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"api",
+						"tasks",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "690001ce648e127ff06f4612"
+						}
+					]
+				},
+				"description": "Un endpoint que elimina un task en base al ID"
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "http://localhost:3000",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
