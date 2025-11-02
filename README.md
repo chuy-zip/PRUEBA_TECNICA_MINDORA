@@ -1,4 +1,6 @@
 # PRUEBA_TECNICA_MINDORA
+
+### Hecho Por Ricardo Andrés Chuy Morales
 Este repo es una prueba técnica donde el objetivo es realiar el backend para una aplicación de tipo TODO-LIST simple. Para esta prueba, no se toma en consideración cosas como autenticación, roles o usuarios, por lo que el modelo es bastante simple. Para realizar el backend lo que hice fue crear una base de datos en Mongo Cloud. Ya que uno de los requisitos mencionados en el pdf fue que fuera sencillo de probar el proyecto decidí usar el enfoque de cloud en lugar de un contenedor con Docker. Además de eso, para simplificar aún más la demostración del sistema de backend realizado he realizado un deploy de la API en vercel. Vercel es también una tecnología cloud que facilita la construcción y deploy de proyectos, que se vincula de forma práctica con git.
 
 El proyecto ahora mismo funciona de forma automática y al momento de realizar un commit se intenta realizar un deploy a mi cuenta de vercel. Entonces, este proyecto de backend se puede probar tanto de forma local o bien visitando el deploy de la API [aquí](https://prueba-tecnica-mindora.vercel.app) y utilizando las rutas que se especifican luego en este mismo README. Esto es posible porque realicé la configuración necesaria de variables de entorno en vercel y la vinculación con el repositorio de github.  Ahora bien, soy consciente que en un ambiente laboral, no es seguro tener un deploy que tenga la capacidad de modifcar la base de datos, pero mi objetivo principal fue hacerlo de esta manera para simplificar la demostración del funcionamiento.
@@ -71,6 +73,12 @@ Este proyecto sigue una arquitectura MVC (Model-View-Controller) modular diseña
 * **creadoEn**: Timestamp automático para auditoría y ordenamiento.
 * **actualizadoEn**: Timestamp que rastrea la última modificación.
 * **completadaEn**: Timestamp opcional que registra cuándo se finalizó la tarea.
+
+## Prueba rápida
+He realizado un front end, hosteado también con vercel, para hacer pruebas con una GUI hecha con react y NextJS. Es un ejemplo donde principalmente se pueden corroborar los GET (traer y filtrar las tasks), POST (crear un task), UPDATE (markar como completado) y DELETE (borrar un task). Esta interfaz fue algo extra para corroborar el funcionamiento y puede ser accedido desde internet. Esta UI usa la API deployeada en vercel. Los enlaces son:
+* Enlace a la página: https://github.com/chuy-zip/demo-mindora
+* Enlace al repo: https://demo-mindora.vercel.app/
+
 
 ## Pasos de Instalación y Prueba
 Es necesario contar con node y npm para poder realizar la descarga y prueba local del proyecto. Si no se cuenta con eso, también se puede probar con el deploy y e importando el json de prueba de postman. Hay un json para pruebas locales y otro para las pruebas con el deplooy.
