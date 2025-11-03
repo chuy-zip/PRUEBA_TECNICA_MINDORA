@@ -76,8 +76,8 @@ Este proyecto sigue una arquitectura MVC (Model-View-Controller) modular diseña
 
 ## Prueba rápida
 He realizado un front end, hosteado también con vercel, para hacer pruebas con una GUI hecha con react y NextJS. Es un ejemplo donde principalmente se pueden corroborar los GET (traer y filtrar las tasks), POST (crear un task), UPDATE (markar como completado) y DELETE (borrar un task). Esta interfaz fue algo extra para corroborar el funcionamiento y puede ser accedido desde internet. Esta UI usa la API deployeada en vercel. Los enlaces son:
-* Enlace a la página: https://github.com/chuy-zip/demo-mindora
-* Enlace al repo: https://demo-mindora.vercel.app/
+* Enlace al repo: https://github.com/chuy-zip/demo-mindora
+* Enlace a la página: https://demo-mindora.vercel.app/
 
 
 ## Pasos de Instalación y Prueba
